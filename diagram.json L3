@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "Eulyn Dela Cruz",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -223.8, "left": 41.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -142.4,
+      "left": 138.6,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -142.4,
+      "left": 186.6,
+      "rotate": 180,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -303.25,
+      "left": 124.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -312.85,
+      "left": 230.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "led2:A", "bb1:15t.e", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:16t.e", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:10t.e", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:11t.e", "", [ "$bb" ] ],
+    [ "r3:1", "uno:8", "green", [ "v0" ] ],
+    [ "r3:2", "bb1:10t.a", "green", [ "v0" ] ],
+    [ "bb1:tn.9", "bb1:11t.a", "black", [ "v0" ] ],
+    [ "r1:2", "bb1:15t.a", "green", [ "v0" ] ],
+    [ "bb1:tn.13", "bb1:16t.a", "black", [ "v0" ] ],
+    [ "r1:1", "uno:9", "green", [ "v0" ] ],
+    [ "bb1:tn.1", "uno:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
